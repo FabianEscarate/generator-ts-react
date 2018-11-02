@@ -10,6 +10,39 @@ module.exports = class extends Generator {
     super(args, opts);
   }
 
+  generateFolders() {
+    var flagCurrentFolder = this.props.flagCurrentFolder;
+    var proyectName = this.props.proyectName;
+
+    if (!flagCurrentFolder) {
+      this.destinationRoot(proyectName);
+    }
+    this.fs.copyTpl(this.templatePath('index.html'), this.destinationPath('index.html'), {
+      title: proyectName
+    });
+    this.fs.copyTpl(
+      this.templatePath('webpack.config.js'),
+      this.destinationPath('webpack.config.js')
+    );
+    this.fs.copyTpl(
+      this.templatePath('gulpfile.js'),
+      this.destinationPath('gulpfile.js')
+    );
+    this.fs.copyTpl(
+      this.templatePath('src/index.tsx'),
+      this.destinationPath('src/index.tsx')
+    );
+    this.fs.copyTpl(
+      this.templatePath('src/components/Hello.tsx'),
+      this.destinationPath('src/components/Hello.tsx')
+    );
+    this.fs.copyTpl(
+      this.templatePath('src/css/style.scss'),
+      this.destinationPath('src/css/style.scss')
+    );
+    this.fs.copyTpl(this.templatePath('src/font/'), this.destinationPath('src/font/'));
+  }
+
   generatePackage() {
     const pkg = {
       name: this.props.proyectName,
@@ -70,20 +103,6 @@ module.exports = class extends Generator {
     this.fs.extendJSON(this.destinationPath('tsconfig.json'), tsconfigJson);
   }
 
-  generateFolders() {
-    var flagCurrentFolder = this.props.flagCurrentFolder;
-    var proyectName = this.props.proyectName;
-
-    if (!flagCurrentFolder) {
-      this.destinationRoot(proyectName);
-      this.fs.copyTpl(
-        this.templatePath('index.html'),
-        this.destinationPath('index.html'),
-        { title: proyectName }
-      );
-    }
-  }
-
   prompting() {
     // Have Yeoman greet the user.
     this.log(
@@ -119,7 +138,7 @@ module.exports = class extends Generator {
 
   writing() {
     console.log(this.props);
-    this.generateFolders();
+    // this.generateFolders();
     // this.fs.copy(
     //   this.templatePath('dummyfile.txt'),
     //   this.destinationPath('dummyfile.txt')
