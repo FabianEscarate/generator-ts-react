@@ -1,13 +1,9 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-let data = () => {
-    return Informacion.data;
-};
+import { Hello } from "./components/Hello";
 
 ReactDOM.render(
-    <React.Fragment key='main'>
-        div
-    </React.Fragment>,
+    <Hello compiler="TypeScript" framework="React" />,
     document.getElementById("bodyContent")
 );
