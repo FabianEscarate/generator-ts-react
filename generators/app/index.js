@@ -17,6 +17,7 @@ module.exports = class extends Generator {
     if (!flagCurrentFolder) {
       this.destinationRoot(proyectName);
     }
+
     this.fs.copyTpl(this.templatePath('index.html'), this.destinationPath('index.html'), {
       title: proyectName
     });
@@ -24,9 +25,14 @@ module.exports = class extends Generator {
       this.templatePath('webpack.config.js'),
       this.destinationPath('webpack.config.js')
     );
+    this.fs.copyTpl(this.templatePath('.gitignore'), this.destinationPath('.gitignore'));
     this.fs.copyTpl(
       this.templatePath('gulpfile.js'),
       this.destinationPath('gulpfile.js')
+    );
+    this.fs.copyTpl(
+      this.templatePath('src/logo.svg'),
+      this.destinationPath('src/logo.svg')
     );
     this.fs.copyTpl(
       this.templatePath('src/index.tsx'),
@@ -37,17 +43,20 @@ module.exports = class extends Generator {
       this.destinationPath('src/components/Hello.tsx')
     );
     this.fs.copyTpl(
+      this.templatePath('src/css/Hello.scss'),
+      this.destinationPath('src/css/Hello.scss')
+    );
+    this.fs.copyTpl(
       this.templatePath('src/css/style.scss'),
       this.destinationPath('src/css/style.scss')
     );
-    this.fs.copyTpl(this.templatePath('src/font/'), this.destinationPath('src/font/'));
   }
 
   generatePackage() {
     const pkg = {
       name: this.props.proyectName,
       version: '1.0.0',
-      description: 'Nuevo proyecto: ' + this.props.proyectName + ' (React-ts) ',
+      description: this.props.proyectDescripcion,
       main: 'index.js',
       scripts: {
         test: 'echo "Error: no test specified" && exit 1'
@@ -127,6 +136,12 @@ module.exports = class extends Generator {
         name: 'flagCurrentFolder',
         message: 'Desea utilizar la carpeta actual?',
         default: true
+      },
+      {
+        type: 'confirm',
+        name: 'flagInstallPackages',
+        message: 'Desea instalar paquetes despues de la instalacion?',
+        default: true
       }
     ];
 
@@ -137,15 +152,13 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    console.log(this.props);
-    // this.generateFolders();
-    // this.fs.copy(
-    //   this.templatePath('dummyfile.txt'),
-    //   this.destinationPath('dummyfile.txt')
-    // );
+    console.log('Instalando carpetas y archivos');
   }
 
   install() {
-    // this.installDependencies();
+    if (this.props.flagInstallPackages) {
+      this.npmInstall();
+      // this.installDependencies();
+    }
   }
 };
