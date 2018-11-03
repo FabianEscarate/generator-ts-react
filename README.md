@@ -1,19 +1,29 @@
-# generator-ts-react [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# generator-ts-react-complete [![NPM version][npm-image]][npm-url] 
 > 
+
+Plantilla Yeoman, para proyectos de prueba con:
+
+- React
+- TypeScript
+  
+viene configurado con:
+
+- Gulp
+- Webpack
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-ts-react using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io) and generator-ts-react-complete using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo
-npm install -g generator-ts-react
+npm install -g generator-ts-react-complete
 ```
 
 Then generate your new project:
 
 ```bash
-yo ts-react
+yo ts-react-complete
 ```
 
 ## Getting To Know Yeoman
@@ -28,11 +38,11 @@ yo ts-react
 ISC © [Fabian Roberto Escarate Espinoza]()
 
 
-[npm-image]: https://badge.fury.io/js/generator-ts-react.svg
-[npm-url]: https://npmjs.org/package/generator-ts-react
-[travis-image]: https://travis-ci.org//generator-ts-react.svg?branch=master
-[travis-url]: https://travis-ci.org//generator-ts-react
-[daviddm-image]: https://david-dm.org//generator-ts-react.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org//generator-ts-react
-[coveralls-image]: https://coveralls.io/repos//generator-ts-react/badge.svg
-[coveralls-url]: https://coveralls.io/r//generator-ts-react
+[npm-image]: https://badge.fury.io/js/generator-ts-react-complete.svg
+[npm-url]: https://npmjs.org/package/generator-ts-react-complete
+[travis-image]: https://travis-ci.org//generator-ts-react-complete.svg?branch=master
+[travis-url]: https://travis-ci.org//generator-ts-react-complete
+[daviddm-image]: https://david-dm.org//generator-ts-react-complete.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org//generator-ts-react-complete
+[coveralls-image]: https://coveralls.io/repos//generator-ts-react-complete/badge.svg
+[coveralls-url]: https://coveralls.io/r//generator-ts-react-complete

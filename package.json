@@ -1,12 +1,12 @@
 {
-  "name": "generator-ts-react",
-  "version": "0.0.0",
+  "name": "generator-ts-react-complete",
+  "version": "1.0.1",
   "description": "",
   "homepage": "",
   "author": {
     "name": "Fabian Roberto Escarate Espinoza",
     "email": "fescarate@outlook.com",
-    "url": ""
+    "url": "https://www.npmjs.com/~fabianescarate"
   },
   "files": [
     "generators"
