@@ -15,6 +15,23 @@ module.exports = {
 
   module: {
     rules: [
+      // carga de svg
+      {
+        test: /\.svg$/,
+        loader: 'url-loader',
+        options: {
+          limit: 8150
+        }
+      },
+      // {
+      //   test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+      //   loader: 'file-loader',
+      //   options: {
+      //     emitFile: false,
+      //     name: '[name].[ext]'
+      //   }
+      // },
+
       // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
       { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
 
@@ -29,6 +46,7 @@ module.exports = {
           'sass-loader' // Compiles Sass to CSS
         ]
       }
+
     ]
   },
 

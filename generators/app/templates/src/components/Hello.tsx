@@ -1,6 +1,8 @@
 import * as React from "react";
-import logo from './../logo.svg';
 import './../css/Hello.scss';
+import { string } from "prop-types";
+
+const logo = require('./../logo.svg');
 
 export interface HelloProps { compiler: string; framework: string; }
 
@@ -13,7 +15,7 @@ export class Hello extends React.Component<HelloProps, {}> {
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
                     <p>
-                        Edit <code>src/App.js</code> and save to reload.
+                        Edit <code>src/index.tsx</code> and save to reload.
                     </p>
                     <p>Hello from {this.props.compiler} and {this.props.framework}!</p>
                     <a

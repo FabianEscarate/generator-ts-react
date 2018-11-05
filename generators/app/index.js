@@ -39,6 +39,10 @@ module.exports = class extends Generator {
       this.destinationPath('src/index.tsx')
     );
     this.fs.copyTpl(
+      this.templatePath('src/tsd.d.ts'),
+      this.destinationPath('src/tsd.d.ts')
+    );
+    this.fs.copyTpl(
       this.templatePath('src/components/Hello.tsx'),
       this.destinationPath('src/components/Hello.tsx')
     );
@@ -81,6 +85,8 @@ module.exports = class extends Generator {
         'gulp-live-server': '0.0.31',
         https: '^1.0.0',
         'node-sass': '^4.9.2',
+        'url-loader': '^1.1.2',
+        'file-loader': '^2.0.0',
         rest: '^2.0.0',
         'sass-loader': '^7.0.3',
         'source-map-loader': '^0.2.3',

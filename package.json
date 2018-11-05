@@ -1,7 +1,7 @@
 {
   "name": "generator-ts-react-complete",
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.0.2",
+  "description": "Plantilla yeoman para creacion de componentes react. (similar a spfx)",
   "homepage": "",
   "author": {
     "name": "Fabian Roberto Escarate Espinoza",
