@@ -25,7 +25,7 @@ module.exports = class extends Generator {
       this.templatePath('webpack.config.js'),
       this.destinationPath('webpack.config.js')
     );
-    this.fs.copyTpl(this.templatePath('.gitignore'), this.destinationPath('.gitignore'));
+    this.fs.copyTpl(this.templatePath('gitignore'), this.destinationPath('.gitignore'));
     this.fs.copyTpl(
       this.templatePath('gulpfile.js'),
       this.destinationPath('gulpfile.js')
